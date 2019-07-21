@@ -16,7 +16,9 @@ class Summoners extends React.Component {
 
 //PropTypes
 Summoners.propTypes = {
-    summoners: PropTypes.array.isRequired 
+    summoners: PropTypes.array.isRequired,
+    isDeleted: PropTypes.func.isRequired,
+    
 }
 
 export default Summoners;

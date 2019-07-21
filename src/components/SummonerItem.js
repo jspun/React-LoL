@@ -28,7 +28,8 @@ export class SummonerItem extends Component {
 }
 //PropTypes
 SummonerItem.propTypes = {
-    summoner: PropTypes.object.isRequired 
+    summoner: PropTypes.object.isRequired,
+    isDeleted: PropTypes.func.isRequired, 
 }
 
 

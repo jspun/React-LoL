@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class AddSummoner extends Component {
     state ={
@@ -42,6 +43,10 @@ export class AddSummoner extends Component {
             </form>
         )
     }
+}
+
+AddSummoner.propTypes = {
+    addSummoner: PropTypes.func.isRequired
 }
 
 export default AddSummoner
