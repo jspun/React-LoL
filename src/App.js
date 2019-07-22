@@ -32,16 +32,25 @@ class App extends React.Component {
         id: uuid.v4(),
         title: title,
       }
-      if (title !== ""){
-        this.setState({summoners: [...this.state.summoners,newsummoner]});
-        localStorage.setItem("List",JSON.stringify([...this.state.summoners,newsummoner]));  
+      console.log(this.state.summoners.filter(summoner => (summoner.title === title)));
+      
+      if ((title !== "") && (this.state.summoners.filter(summoner => (summoner.title === title)).length === 0)) {
+        this.setState({summoners: [newsummoner,...this.state.summoners]});
+        localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners]));  
       }
+      else if ((title !== "") && (this.state.summoners.filter(summoner => (summoner.title === title)).length !== 0)){
+        this.setState({summoners: [newsummoner,...this.state.summoners.filter(summoner => 
+          summoner.title !== title)]});
+        localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners.filter(summoner => 
+          summoner.title !== title)]));  
+
+      } 
       else{
           alert("Enter a Summoner name!");
       } 
   }
   render() {
-
+    
     return (
         
         <Router>
