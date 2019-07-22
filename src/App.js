@@ -22,7 +22,8 @@ class App extends React.Component {
       
       this.setState({summoners: [...this.state.summoners.filter(summoner => 
         summoner.id !== id)]});
-      //localStorage.setItem("List",JSON.stringify(this.state.summoners));
+      localStorage.setItem("List",JSON.stringify([...this.state.summoners.filter(summoner => 
+        summoner.id !== id)]));  
       
   }
 
@@ -33,20 +34,12 @@ class App extends React.Component {
       }
       if (title !== ""){
         this.setState({summoners: [...this.state.summoners,newsummoner]});
-        //localStorage.setItem("List",JSON.stringify(this.state.summoners,newsummoner));
-
-        
+        localStorage.setItem("List",JSON.stringify([...this.state.summoners,newsummoner]));  
       }
       else{
           alert("Enter a Summoner name!");
-      }
-
-      
-      
+      } 
   }
-
-
-
   render() {
 
     return (
