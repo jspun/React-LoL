@@ -9,7 +9,7 @@ class Summoners extends React.Component {
     render() {
         
         return this.props.summoners.map(summoner  => (
-            <SummonerItem key = {summoner.id} summoner = {summoner} isDeleted = {this.props.isDeleted}></SummonerItem>
+            <SummonerItem key = {summoner.id} summoner = {summoner} isDeleted = {this.props.isDeleted} addSummoner = {this.props.addSummoner}></SummonerItem>
         ));
     }
 }
@@ -18,6 +18,7 @@ class Summoners extends React.Component {
 Summoners.propTypes = {
     summoners: PropTypes.array.isRequired,
     isDeleted: PropTypes.func.isRequired,
+    addSummoner: PropTypes.func.isRequired,
     
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
+
 export class SummonerItem extends Component {
     
     getStyle = () => {
@@ -10,6 +11,20 @@ export class SummonerItem extends Component {
             padding: '10px',
             borderBottom: '1px #ccc dotted',
         }
+    }
+    getButtonStyle = () => {
+        return {
+            background: "none",
+            border: 'none',
+        }
+
+    }
+
+    onClickEvent = (e) => {
+        e.preventDefault();
+        this.props.addSummoner(this.title);
+        this.setState({title: ''})
+        this.setState({currentsummoner: ''})
     }
    
 
@@ -20,7 +35,7 @@ export class SummonerItem extends Component {
                 
                <p>
                 <span onClick = {this.props.isDeleted.bind(this,id)} >x</span>
-               {title}
+                <button style = {this.getButtonStyle()} className = "link" onClick = {this.props.addSummoner.bind(this,title)} >{title}</button>
                </p> 
             </div>
         )
@@ -29,7 +44,8 @@ export class SummonerItem extends Component {
 //PropTypes
 SummonerItem.propTypes = {
     summoner: PropTypes.object.isRequired,
-    isDeleted: PropTypes.func.isRequired, 
+    isDeleted: PropTypes.func.isRequired,
+    addSummoner: PropTypes.func.isRequired, 
 }
 
 

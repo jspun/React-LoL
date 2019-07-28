@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
 export class AddSummoner extends Component {
     state ={
         title: '',
@@ -13,6 +14,8 @@ export class AddSummoner extends Component {
         e.preventDefault();
         this.props.addSummoner(this.state.title);
         this.setState({title: ''})
+        this.setState({currentsummoner: ''})
+        
     }
 
 
