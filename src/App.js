@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route,Redirect } from 'react-router-dom';
 import About from './components/pages/About';
-import Player from './components/pages/Player';
 import './App.css';
 import Summoners from './components/Summoners';
 import AddSummoner from './components/AddSummoner';
 import Header from './components/layout/Header';
 import uuid from 'uuid';
+import DisplaySummoner from './components/DisplaySummoner';
 //import axios from 'axios';
 
 class App extends React.Component {
@@ -72,7 +72,7 @@ class App extends React.Component {
   
   render() {
     
-    console.log("render")
+    console.log(this.state.summoners[0])
     console.log(this.state.redirect)
     return (  
         <Router>
@@ -91,9 +91,13 @@ class App extends React.Component {
                         </Route>
 
                         <Route path = "/about" component = {About}></Route>
-                        <Route path = "/player" component = {Player}></Route>                                             
+                        <Route path = "/player" render = {props => (
+                          <React.Fragment>
+                            <DisplaySummoner displaysummoner = {this.state.summoners[0]}></DisplaySummoner>
+                          </React.Fragment>
+                        )}></Route>
                 </div>
-            </div>
+            </div> 
         </Router>
         
     );

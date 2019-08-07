@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 
-export class SummonerItem extends Component {
+class SummonerItem extends Component {
     
     getStyle = () => {
         return {

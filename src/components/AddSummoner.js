@@ -30,11 +30,7 @@ export class AddSummoner extends Component {
                 value = {this.state.title}
                 onChange = {this.onChange}
                 >
-
                 </input>
-                
-                
-
                 <input
                 type = 'submit'
                 value = 'Submit'
