@@ -9,9 +9,9 @@ class Summoners extends React.Component {
     render() {
         if(this.props.summoners.length === 0){
             return (
-                <SummonerItem addSummoner = {this.props.addSummoner}></SummonerItem>
-
-
+                <div>
+                    
+                </div>
             )
         }
         
