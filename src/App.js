@@ -102,7 +102,7 @@ class App extends React.Component {
                         <Route path = "/about" component = {About}></Route>
                         <Route path = "/player" render = {props => (
                           <React.Fragment>
-                            <DisplaySummoner displaysummoner = {this.state.summoners[0]}></DisplaySummoner>
+                            <DisplaySummoner></DisplaySummoner>
                           </React.Fragment>
                         )}></Route>
                 </div>

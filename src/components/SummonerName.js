@@ -16,6 +16,7 @@ export default class SummonerName extends Component {
     }
     
     render() {
+        
         return(
             <div>
                 {this.fetchName()}
