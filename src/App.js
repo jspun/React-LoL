@@ -46,11 +46,13 @@ class App extends React.Component {
       if ((title !=="") && (this.state.summoners === null)){
         this.setState({summoners: [newsummoner],redirect: true});
         localStorage.setItem("List",JSON.stringify([newsummoner]));
+        return
 
       }     
-      if ((title !== "") && (this.state.summoners.filter(summoner => (summoner.title === title)).length === 0)) {
+      else if ((title !== "") && (this.state.summoners.filter(summoner => (summoner.title === title)).length === 0)) {
         this.setState({summoners: [newsummoner,...this.state.summoners],redirect: true});
         localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners]));
+        return
         
       }
       else if ((title !== "") && (this.state.summoners.filter(summoner => (summoner.title === title)).length !== 0)){
@@ -58,6 +60,7 @@ class App extends React.Component {
           summoner.title !== title)], redirect: true});
         localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners.filter(summoner => 
           summoner.title !== title)]));
+          return
          
       } 
       else{
