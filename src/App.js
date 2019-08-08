@@ -42,7 +42,12 @@ class App extends React.Component {
       const newsummoner ={
         id: uuid.v4(),
         title: title,
-      }      
+      } 
+      if ((title !=="") && (this.state.summoners === null)){
+        this.setState({summoners: [newsummoner,...this.state.summoners],redirect: true});
+        localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners]));
+
+      }     
       if ((title !== "") && (this.state.summoners.filter(summoner => (summoner.title === title)).length === 0)) {
         this.setState({summoners: [newsummoner,...this.state.summoners],redirect: true});
         localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners]));
