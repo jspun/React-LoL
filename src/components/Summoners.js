@@ -7,10 +7,10 @@ class Summoners extends React.Component {
     
     
     render() {
-        if(this.props.summoners.length === 0){
+        if(this.props.summoners.length === null){
             return (
                 <div>
-                    
+
                 </div>
             )
         }
