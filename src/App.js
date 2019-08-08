@@ -44,7 +44,7 @@ class App extends React.Component {
         title: title,
       } 
       if ((title !=="") && (this.state.summoners === null)){
-        this.setState({summoners: [newsummoner,...this.state.summoners],redirect: true});
+        this.setState({summoners: [newsummoner],redirect: true});
         localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners]));
 
       }     
