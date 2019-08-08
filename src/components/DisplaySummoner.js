@@ -12,17 +12,13 @@ export default class DisplaySummoner extends Component {
         summonerName: ''
 
     }
-    componentDidMount(){
-        this.setState({summonerName: (JSON.parse(localStorage.getItem("List")))[0].title});
-        
-    }
 
     render() {
         
         return (
             <div>
                 <h1>PlayerInfo</h1>
-                <SummonerName name = {this.state.summonerName}></SummonerName>
+                <SummonerName name = {(JSON.parse(localStorage.getItem("List")))[0].title}></SummonerName>
 
             </div>
         )
