@@ -72,8 +72,8 @@ class App extends React.Component {
   
   render() {
     
-    console.log(this.state.summoners[0])
-    console.log(this.state.redirect)
+    
+    
     return (  
         <Router>
             {this.redirect()}
@@ -85,6 +85,7 @@ class App extends React.Component {
                             <React.Fragment>
                         
                                 <AddSummoner addSummoner = {this.addSummoner}></AddSummoner>
+                                
                                 <Summoners summoners = {this.state.summoners} isDeleted = {this.isDeleted} addSummoner = {this.addSummoner}/>  
                             </React.Fragment>
                         )}>

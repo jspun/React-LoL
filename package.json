@@ -1,7 +1,7 @@
 {
   "name": "react-lol",
   "version": "0.1.0",
-  "homepage": "https://github.com/punjordi/React-LoL",
+  "homepage": "https://punjordi.github.io/React-LoL/",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
@@ -9,6 +9,10 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "engines": {
+      "npm": "6.9.0",
+      "node": "10.16.0"
+    },
     "uuid": "^3.3.2"
   },
   "scripts": {
