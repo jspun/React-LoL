@@ -45,7 +45,7 @@ class App extends React.Component {
       } 
       if ((title !=="") && (this.state.summoners === null)){
         this.setState({summoners: [newsummoner],redirect: true});
-        localStorage.setItem("List",JSON.stringify([newsummoner,...this.state.summoners]));
+        localStorage.setItem("List",JSON.stringify([newsummoner]));
 
       }     
       if ((title !== "") && (this.state.summoners.filter(summoner => (summoner.title === title)).length === 0)) {
