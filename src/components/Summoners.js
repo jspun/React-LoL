@@ -7,12 +7,18 @@ class Summoners extends React.Component {
     
     
     render() {
+        if(this.props.summoners.length === 0){
+            return (
+                <SummonerItem key = {summoner.id} summoner = {summoner} isDeleted = {this.props.isDeleted} addSummoner = {this.props.addSummoner}></SummonerItem>
 
+
+            )
+        }
         
         return this.props.summoners.map(summoner  => (
             <SummonerItem key = {summoner.id} summoner = {summoner} isDeleted = {this.props.isDeleted} addSummoner = {this.props.addSummoner}></SummonerItem>
         ));
-    }
+    } 
 }
 
 //PropTypes
