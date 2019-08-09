@@ -9,7 +9,7 @@ export default class DisplaySummoner extends Component {
         apikey : "RGAPI-ca1f4d68-d7e4-4dcf-a5d4-1389ec5eaf6f",
         accountID : '',
         matchlist : [],
-        summonerName: ''
+        summonerName: '',
 
     }
 
@@ -17,7 +17,6 @@ export default class DisplaySummoner extends Component {
         
         return (
             <div>
-                <h1>PlayerInfo</h1>
                 <SummonerName name = {(JSON.parse(localStorage.getItem("List")))[0].title}></SummonerName>
 
             </div>
