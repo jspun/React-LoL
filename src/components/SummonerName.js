@@ -8,17 +8,13 @@ export default class SummonerName extends Component {
     };
 
     componentDidMount(){
-        fetch("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=RGAPI-ca1f4d68-d7e4-4dcf-a5d4-1389ec5eaf6f",
-        {mode :'no-cors',
-        "Access-Control-Allow-Origin" : "*", 
-        "Access-Control-Allow-Credentials" : true} )
-        .then(results => {
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=RGAPI-ca1f4d68-d7e4-4dcf-a5d4-1389ec5eaf6f";
 
-            return results.json();
-            ``
-  
-
-            })
+        fetch(proxyurl + url)
+        .then(response => response.text())
+        .then(contents => console.log(contents))
+        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
             
 
     }
