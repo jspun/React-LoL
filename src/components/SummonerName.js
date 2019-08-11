@@ -21,7 +21,7 @@ export default class SummonerName extends Component {
 
     componentDidMount(){
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=RGAPI-224d5e49-ea7d-4413-96b6-40efe7d0c637";
+        const url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=RGAPI-058b696d-54f7-4a91-876f-06da56578f3b";
 
         fetch(proxyurl + url)
         .then(response => response.json())
