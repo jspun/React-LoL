@@ -27,11 +27,11 @@ export default class SummonerName extends Component {
         //const mathurl = 
 
 
-        fetch(proxyurl + url)
+        fetch(proxyurl + Summonerurl)
         .then(response => response.json())
         .then(contents => this.setState({summonerID: contents.accountId, profileID: contents.profileIconId, summonerLevel: contents.summonerLevel, name: contents.name}))
         .then(test => console.log(test))
-        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+        .catch(() => console.log("Can’t access " + Summonerurl + " response. Blocked by browser?"))
 
 
     }
