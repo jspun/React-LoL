@@ -30,7 +30,7 @@ export default class SummonerName extends Component {
 
         fetch(proxyurl + Summonerurl)
         .then(response => response.json())
-        .then(contents => this.setState({accountID: contents.accountId, profileID: contents.profileIconId, summonerLevel: contents.summonerLevel, name: contents.name, summonerID: contents.summonerId}))
+        .then(contents => this.setState({accountID: contents.accountId, profileID: contents.profileIconId, summonerLevel: contents.summonerLevel, name: contents.name, summonerID: contents.id}))
         .catch(() => console.log("Can’t access " + Summonerurl + " response. Blocked by browser?"))
 
 
