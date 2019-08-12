@@ -20,8 +20,9 @@ export default class SummonerName extends Component {
     }
 
     componentDidMount(){
+        const apikey = "RGAPI-1434f867-9ded-44c8-a153-b6b9cf227970";
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=RGAPI-224d5e49-ea7d-4413-96b6-40efe7d0c637";
+        const url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=" + apikey;
 
         fetch(proxyurl + url)
         .then(response => response.json())
