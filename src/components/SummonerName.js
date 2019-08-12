@@ -3,10 +3,11 @@ import React, { Component } from 'react'
 export default class SummonerName extends Component {
 
     state = {
-        summonerID:'',
+        accountID:'',
         profileID:'',
         summonerLevel : '',
         name: '',
+        summonerID: '',
     };
 
     getStyle = () =>{
@@ -29,8 +30,7 @@ export default class SummonerName extends Component {
 
         fetch(proxyurl + Summonerurl)
         .then(response => response.json())
-        .then(contents => this.setState({summonerID: contents.accountId, profileID: contents.profileIconId, summonerLevel: contents.summonerLevel, name: contents.name}))
-        .then(test => console.log(test))
+        .then(contents => this.setState({accountID: contents.accountId, profileID: contents.profileIconId, summonerLevel: contents.summonerLevel, name: contents.name, summonerID: contents.summonerId}))
         .catch(() => console.log("Can’t access " + Summonerurl + " response. Blocked by browser?"))
 
 
@@ -38,6 +38,7 @@ export default class SummonerName extends Component {
     
     render() {
         let profileIconUrl = "https://ddragon.leagueoflegends.com/cdn/9.3.1/img/profileicon/" + this.state.profileID + ".png"
+        console.log(this.state.summonerID)
         return(
             <div className = "container">
                 <img src = {profileIconUrl} alt = "SummonerIcon" width = "200px" height = "auto" style={{padding: "40px"}}/>
