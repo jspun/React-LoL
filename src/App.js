@@ -8,7 +8,6 @@ import Header from './components/layout/Header';
 import uuid from 'uuid';
 import DisplaySummoner from './components/DisplaySummoner';
 //import axios from 'axios';
-
 class App extends React.Component {
   state = {
       summoners: [],
@@ -86,11 +85,17 @@ class App extends React.Component {
         <Router>
             {this.redirect()}
             <div className="App">
-                
+              <Header></Header>
+
                 <div className="container">
-                    <Header></Header>
+                  
+                    <div className="Contents">
+                    
+                    
+                      
                         <Route exact path = "/" render = {props => (
                             <React.Fragment>
+                              <img src ="https://i.pinimg.com/originals/98/36/1a/98361a85e6540a6c511aa24389f6a5ee.jpg"  alt = "test" width = "25%" height = "25%" className = "center" ></img>
                         
                                 <AddSummoner addSummoner = {this.addSummoner}></AddSummoner>
                                 
@@ -100,7 +105,9 @@ class App extends React.Component {
                         </Route>
 
                         <Route path = "/about" component = {About}></Route>
-                        <Route path = "/player" render = {props => (
+                        
+                    </div>
+                    <Route path = "/player" render = {props => (
                           <React.Fragment>
                             <DisplaySummoner></DisplaySummoner>
                           </React.Fragment>

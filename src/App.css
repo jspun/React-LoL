@@ -2,6 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
+  
+  
 }
 
 body {
@@ -23,7 +26,26 @@ p span {
 }
 
 .container {
-  padding: 0 1rem;
+  padding: 0 ;
+  background-color: #555;
+  height: 100vh;
+
+}
+.Contents {
+  position: relative;
+  padding: 200px 400px 0px 400px
+
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  overflow: hidden;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+
 }
 
 .btn {
