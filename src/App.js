@@ -89,13 +89,19 @@ class App extends React.Component {
 
                 <div className="container">
                   
+                <Route path = "/player" render = {props => (
+                          <React.Fragment>
+                            <DisplaySummoner></DisplaySummoner>
+                          </React.Fragment>
+                        )}></Route>
+                  
                     <div className="Contents">
                     
                     
                       
                         <Route exact path = "/" render = {props => (
                             <React.Fragment>
-                              <img src ="https://i.pinimg.com/originals/98/36/1a/98361a85e6540a6c511aa24389f6a5ee.jpg"  alt = "test" width = "25%" height = "25%" className = "center" ></img>
+                              <img src ="https://i.pinimg.com/originals/98/36/1a/98361a85e6540a6c511aa24389f6a5ee.jpg"  alt = "test" className = "center" ></img>
                         
                                 <AddSummoner addSummoner = {this.addSummoner}></AddSummoner>
                                 
@@ -107,11 +113,7 @@ class App extends React.Component {
                         <Route path = "/about" component = {About}></Route>
                         
                     </div>
-                    <Route path = "/player" render = {props => (
-                          <React.Fragment>
-                            <DisplaySummoner></DisplaySummoner>
-                          </React.Fragment>
-                        )}></Route>
+                    
                 </div>
             </div> 
         </Router>

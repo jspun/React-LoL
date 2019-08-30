@@ -23,7 +23,7 @@ export default class SummonerName extends Component {
     }
 
     componentDidMount(){
-        const apikey = "RGAPI-c38f0961-5af8-44e1-880a-fa8188458b2f";
+        const apikey = "RGAPI-457f85e1-ec86-4c1a-ac44-21f23a1a15a2";
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
         const Summonerurl = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=" + apikey;
@@ -56,14 +56,16 @@ export default class SummonerName extends Component {
         let profileIconUrl = "https://opgg-static.akamaized.net/images/profile_icons/profileIcon" + this.state.profileID + ".jpg"
         console.log(this.state.ranks)
         return(
-            <div className = "container">
-                <img src = {profileIconUrl} alt = "SummonerIcon" width = "25%" height = "25%" style={{padding: "40px"}}/>
-                <div className = "SummonerInfo" style = {this.getStyle()}>
-                    
-                    {this.state.name}
-                </div> 
-                   
+            <div className = "newcontainer">
+
+
+            
+                <img src = {profileIconUrl} alt = "SummonerIcon" width = "25%" height = "25%" style={{padding: "40px"}}></img>
+                <p>{this.state.name}</p>
+
             </div>
+                   
+            
             
             
             
