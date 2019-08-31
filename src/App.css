@@ -33,7 +33,7 @@ p span {
 }
 .Contents {
   position: relative;
-  padding: 200px 400px 0px 400px
+  padding: 100px 400px 0px 400px
 
 }
 .center {
@@ -44,6 +44,17 @@ p span {
   overflow: hidden;
   width: 400px;
   height: 300px;
+  overflow: hidden;
+
+}
+.centerprofile {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  overflow: hidden;
+  width: 200px;
+  height: 300x;
   overflow: hidden;
 
 }

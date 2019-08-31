@@ -9,6 +9,7 @@ export default class SummonerName extends Component {
         name: '',
         summonerID: '',
         ranks: [],
+        
 
     };
 
@@ -56,20 +57,14 @@ export default class SummonerName extends Component {
         let profileIconUrl = "https://opgg-static.akamaized.net/images/profile_icons/profileIcon" + this.state.profileID + ".jpg"
         console.log(this.state.ranks)
         return(
-            <div className = "newcontainer">
+            <div className = "newcontainer" style = {{color: "white"}} >
 
 
             
-                <img src = {profileIconUrl} alt = "SummonerIcon" width = "25%" height = "25%" style={{padding: "40px"}}></img>
-                <p>{this.state.name}</p>
+                <img src = {profileIconUrl} alt = "SummonerIcon" width = "25%" height = "25%" className = "centerprofile"></img>
+                <p className = "centerprofile">{this.state.name}</p>
 
-            </div>
-                   
-            
-            
-            
-            
+            </div> 
         )
-        
     }
 }
