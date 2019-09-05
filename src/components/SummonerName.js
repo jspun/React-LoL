@@ -9,10 +9,29 @@ export default class SummonerName extends Component {
         name: '',
         summonerID: '',
         ranks: [],
-        
-
+        score: 12,
+        tier: '',
+        divison: '',
     };
 
+    
+
+    interpretScore = () => {
+        
+        if ( 0 <=this.state.score && this.state.score <= 25 ){
+            return "Tilt score: " + this.state.score + ' Tilted'
+        }
+        else if ( 26 <=this.state.score && this.state.score <= 75 ){
+            return "Tilt score: " + this.state.score + ' Average'
+        }
+        else if ( 76 <=this.state.score && this.state.score <= 100 ){
+            return "Tilt score: " + this.state.score + ' Reliable'
+        }
+        else {
+            return "Tilt score: " + this.state.score + ' ???'
+        }
+
+    }
     getStyle = () =>{
         return {
             font: "sans-serif",
@@ -24,7 +43,7 @@ export default class SummonerName extends Component {
     }
 
     componentDidMount(){
-        const apikey = "RGAPI-457f85e1-ec86-4c1a-ac44-21f23a1a15a2";
+        const apikey = "RGAPI-42305f1d-3d4e-45f1-ae40-23a18d183baf";
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
         const Summonerurl = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + this.props.name + "?api_key=" + apikey;
@@ -46,7 +65,9 @@ export default class SummonerName extends Component {
         .catch((error) => console.log(error))
         
         result.then(r=> 
-            this.setState({ranks: r})
+            
+            this.setState({divison: r.filter(ladder => (ladder.queueType === "RANKED_SOLO_5x5"))[0].rank, tier: r.filter(ladder => (ladder.queueType === "RANKED_SOLO_5x5"))[0].tier})
+            
         )
         
 
@@ -55,14 +76,16 @@ export default class SummonerName extends Component {
     render() {
         
         let profileIconUrl = "https://opgg-static.akamaized.net/images/profile_icons/profileIcon" + this.state.profileID + ".jpg"
-        console.log(this.state.ranks)
+        console.log(this.state.tier)
         return(
             <div className = "newcontainer" style = {{color: "white"}} >
 
 
             
                 <img src = {profileIconUrl} alt = "SummonerIcon" width = "25%" height = "25%" className = "centerprofile"></img>
-                <p className = "centerprofile">{this.state.name}</p>
+                <h1 style= {{textAlign: "center", fontSize: "large"}}>{this.state.name} </h1>
+                <h3 style= {{textAlign: "center", fontSize: "large"}}>{this.state.tier} {this.state.divison} </h3>
+                <h2 style= {{textAlign: "center", fontSize: "large"}}>{this.interpretScore()}</h2>
 
             </div> 
         )
